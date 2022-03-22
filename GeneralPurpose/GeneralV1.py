@@ -162,7 +162,7 @@ def searchAuditLogs(pageIndex=1, pageSize=20, period=30, accessType=0,
 def exportAuditLogs(pageIndex=1, pageSize=20, period=30, accessType=0,
                     categories='11', detail='david',sort='DESC'):
     #categories = "01|02|03|04|05|06|07|08|09|0c|0d|11"
-    url_path = '/v2.0/xdr/portal/auditLog/search'
+    url_path = '/v2.0/xdr/portal/auditLog/exportCsv'
     data = {'pageIndex': pageIndex,
             'pageSize': pageSize,
             'period': period,
