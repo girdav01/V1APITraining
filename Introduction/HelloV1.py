@@ -7,7 +7,7 @@ xdr_token = 'Put-your-api-token-here'
 # get your region from https://automation.trendmicro.com/xdr/Guides/Regional-Domains
 region = "https://api.xdr.trendmicro.com"
 header = {'Authorization': 'Bearer ' + xdr_token, 'Content-Type': 'application/json;charset=utf-8'}
-url_path = '/v2.0/xdr/dmm/models'
+url_path = '/v2.0/xdr/portal/metadata/status'
 query_params = {}
 r = requests.get(region + url_path, params=query_params, headers=header)
 # if the region or any other network issue happen, you won't get here, untrapped error :)
