@@ -170,7 +170,13 @@ def exportAuditLogs(pageIndex=1, pageSize=20, period=30, accessType=0,
             'sort': sort
             }
     
-    return get(url_path, data)
+    #Since return is not json, we will not use the get wrapper function and call requests.get directly
+    r = requests.get(region + url_path, params=data, headers=header)
+    print(r.status_code)
+    if r.status_code != 200:
+        raise Exception(str(r.status_code) + "  " + r.text)
+    else:
+        return r.content
 
 email = 'email@email.com' # replace by an email that never being used with Vision One
 #print(createaccount(email, 'test first name', 'test last name'))
