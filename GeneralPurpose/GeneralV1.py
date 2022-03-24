@@ -141,7 +141,7 @@ def getPermissionsAll():
 
 #Retrieves a list of log entries that match specified criteria
 def searchAuditLogs(pageIndex=1, pageSize=20, period=30, accessType=0,
-                    categories="01", detail='',sort='DESC'):
+                    categories="01", detail='',sort='desc'):
     #categories = "01|02|03|04|05|06|07|08|09|0c|0d|11"
     url_path = '/v2.0/xdr/portal/auditLog/search'
 
@@ -154,13 +154,11 @@ def searchAuditLogs(pageIndex=1, pageSize=20, period=30, accessType=0,
             'sort': sort
             }
 
-    query_params = json.dumps(data)
-
-    return get(url_path, query_params)
+    return get(url_path, data)
 
 #Retrieves a list of log entries that match specified criteria
 def exportAuditLogs(pageIndex=1, pageSize=20, period=30, accessType=0,
-                    categories='11', detail='david',sort='DESC'):
+                    categories='11', detail='david',sort='desc'):
     #categories = "01|02|03|04|05|06|07|08|09|0c|0d|11"
     url_path = '/v2.0/xdr/portal/auditLog/exportCsv'
     data = {'pageIndex': pageIndex,
@@ -171,9 +169,8 @@ def exportAuditLogs(pageIndex=1, pageSize=20, period=30, accessType=0,
             'detail': detail,
             'sort': sort
             }
-    query_params = json.dumps(data)
-
-    return get(url_path, query_params)
+    
+    return get(url_path, data)
 
 email = 'email@email.com' # replace by an email that never being used with Vision One
 #print(createaccount(email, 'test first name', 'test last name'))
